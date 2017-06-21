@@ -3,6 +3,10 @@
   <img src="https://user-images.githubusercontent.com/3812601/27369632-ac3b9144-560d-11e7-895a-87d349d9a66f.gif" alt="" />
 </p>
 
+### Requierments
+  - Swift 3+
+  - iOS 9.0+
+
 ## Installation
 
 ### CocoaPods
