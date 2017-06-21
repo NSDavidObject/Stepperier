@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/NSDavidObject/Stepperier'
   s.social_media_url = 'https://twitter.com/NSDavidObject'
   s.authors = { 'David Elsonbaty' => 'dave@elsonbaty.ca' }
-  s.source = { :git => 'https://github.com/davoda/Stepperier.git', :tag => s.version }
+  s.source = { :git => 'https://github.com/NSDavidObject/Stepperier.git', :tag => s.version }
 
   s.ios.deployment_target = '9.0'
   s.source_files = 'Pod/**/*.swift'
