@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Stepperier'
-  s.version = '1.0.0'
+  s.version = '1.0.1'
   s.license = 'MIT'
   s.summary = 'An interactive draggable stepper'
   s.homepage = 'https://github.com/NSDavidObject/Stepperier'

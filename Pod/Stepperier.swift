@@ -118,7 +118,6 @@ open class Stepperier: UIControl {
         organizationStackView.distribution = .fillProportionally
         addSubview(organizationStackView)
         
-        subtractionSymbolView.alpha = 0.0
         subtractionSymbolView.isOpaque = false
         subtractionSymbolView.lineWidth = symbolsLineWidth
         subtractionSymbolView.color = valueBackgroundColor
@@ -140,6 +139,7 @@ open class Stepperier: UIControl {
         
         setupLayoutConstraints()
         setupPanGestureRecognizer()
+        updateSymbolsAppearanceState()
     }
     
     internal func setupLayoutConstraints() {
