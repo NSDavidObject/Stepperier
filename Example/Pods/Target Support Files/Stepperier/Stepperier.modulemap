@@ -1,0 +1,6 @@
+framework module Stepperier {
+  umbrella header "Stepperier-umbrella.h"
+
+  export *
+  module * { export * }
+}

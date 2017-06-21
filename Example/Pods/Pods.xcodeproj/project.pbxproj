@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02AD33BD06776B422CA1C506945857BB /* Stepperier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D396CE2EB385AA83CC5E128F3B93B /* Stepperier.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		459C3398B2701EC957E06FD4D75238FD /* Stepperier-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DC1FA6F6511A7DE7AA0A23A96276625 /* Stepperier-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5881197655A44919469CD220218D8E58 /* ProportionalCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDEEFB85942B24C2DD0E60053221FB6 /* ProportionalCornerRadius.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		58B7578ADF3F1FBED95479893CA1AA6A /* CenteredLineSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830533EE54E9D9C84947B874E84AAC6 /* CenteredLineSymbolView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		809B9E2E44E4FDFE6DB7C5FDF171C30F /* UIFont+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E416057BBA4E7A5798A83C298C861 /* UIFont+Additions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		838C32E2069C94E10A3004CE7FC5040F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		84B3FD0E356785A42F4A3FF5A766BE08 /* Pods-StepperierExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D72E4D9E5EDA33E3691A085FBBD9E /* Pods-StepperierExample-dummy.m */; };
+		9CAE8BDB52D4EF61C0EE840E8A520163 /* Pods-StepperierExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A914ED2AD3ADDAF6A7E887C8EEEBA82 /* Pods-StepperierExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A67FDBC9F11BE690AB9041AEEAC27129 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9F0AC9639A103EABAEFA34022E56DA /* String+Additions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D3F3E8C51F9DA7D4E86C99E8D4FBDB29 /* Stepperier-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CEC5B5AED37494D05F4C90CA8AF4B4 /* Stepperier-dummy.m */; };
+		E0806AA616E0BB463BE590DA4F40E1C4 /* RoundableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B74391A908D9C4BBB3BDBD0B3F7B66 /* RoundableView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E89BE6A33F41AF2BF3B59AD28CB949A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		81443AF7D9D2A9CF51E7CEFF256F8F2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8B80AACE8B16EBACEF082C9B11452AC;
+			remoteInfo = Stepperier;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00B74391A908D9C4BBB3BDBD0B3F7B66 /* RoundableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RoundableView.swift; sourceTree = "<group>"; };
+		15920AC12EB761F7B00CFBDACEDD86A9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E62470F44E8812E08FA0DAD3940F133 /* Stepperier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Stepperier.framework; path = Stepperier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		315C28A37BA946BDEC2A75C8491164E4 /* Pods-StepperierExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StepperierExample-resources.sh"; sourceTree = "<group>"; };
+		3A914ED2AD3ADDAF6A7E887C8EEEBA82 /* Pods-StepperierExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StepperierExample-umbrella.h"; sourceTree = "<group>"; };
+		3DCE9B6F09379584ECEC416024205425 /* Pods-StepperierExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StepperierExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3EDEEFB85942B24C2DD0E60053221FB6 /* ProportionalCornerRadius.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProportionalCornerRadius.swift; sourceTree = "<group>"; };
+		410D72E4D9E5EDA33E3691A085FBBD9E /* Pods-StepperierExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StepperierExample-dummy.m"; sourceTree = "<group>"; };
+		4DC1FA6F6511A7DE7AA0A23A96276625 /* Stepperier-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Stepperier-umbrella.h"; sourceTree = "<group>"; };
+		544AEB7432FFB6792D5E5259FCE143BF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		582055E245D0ECAD10176EBF3F45B411 /* Stepperier.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Stepperier.modulemap; sourceTree = "<group>"; };
+		641962E58F4501A03EF1DD27B900BF17 /* Pods-StepperierExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StepperierExample.release.xcconfig"; sourceTree = "<group>"; };
+		79E00DACF8759C88F021108FDB0B339C /* Pods-StepperierExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StepperierExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		7D2272D274CA33A914F53E4AC117A0C4 /* Pods-StepperierExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StepperierExample-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B05E416057BBA4E7A5798A83C298C861 /* UIFont+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIFont+Additions.swift"; sourceTree = "<group>"; };
+		CADD0D505B114FD81492541A8C003BD3 /* Stepperier-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Stepperier-prefix.pch"; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CC9F0AC9639A103EABAEFA34022E56DA /* String+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		DBB096020F7FD2CDF2E92F7733BED97C /* Stepperier.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Stepperier.xcconfig; sourceTree = "<group>"; };
+		E5CEC5B5AED37494D05F4C90CA8AF4B4 /* Stepperier-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Stepperier-dummy.m"; sourceTree = "<group>"; };
+		E74D396CE2EB385AA83CC5E128F3B93B /* Stepperier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Stepperier.swift; sourceTree = "<group>"; };
+		E830533EE54E9D9C84947B874E84AAC6 /* CenteredLineSymbolView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CenteredLineSymbolView.swift; sourceTree = "<group>"; };
+		F0BB41462C8EB5FFA03C4BB2DD519A47 /* Pods_StepperierExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StepperierExample.framework; path = "Pods-StepperierExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9E8F1037947F72EAF17B0179E5C1C70 /* Pods-StepperierExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StepperierExample.debug.xcconfig"; sourceTree = "<group>"; };
+		FA3CF3E85C3E39535C9C326A93B92227 /* Pods-StepperierExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-StepperierExample.modulemap"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5053522398D10CF1D8B27ADF9456C019 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				838C32E2069C94E10A3004CE7FC5040F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF8A5E53ABFB0F6D5ECE9540576D80D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E89BE6A33F41AF2BF3B59AD28CB949A5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45339F8001B570D42018F1D3CA2D9BFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0BB41462C8EB5FFA03C4BB2DD519A47 /* Pods_StepperierExample.framework */,
+				1E62470F44E8812E08FA0DAD3940F133 /* Stepperier.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				D5A5CE77DDC52D5405E95C5D5340801D /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				45339F8001B570D42018F1D3CA2D9BFC /* Products */,
+				FE34432A33140104B9B8FBC4404F0B2C /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		906E5C384088673B193EE993CA508CAC /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				E830533EE54E9D9C84947B874E84AAC6 /* CenteredLineSymbolView.swift */,
+				3EDEEFB85942B24C2DD0E60053221FB6 /* ProportionalCornerRadius.swift */,
+				00B74391A908D9C4BBB3BDBD0B3F7B66 /* RoundableView.swift */,
+				E74D396CE2EB385AA83CC5E128F3B93B /* Stepperier.swift */,
+				CC9F0AC9639A103EABAEFA34022E56DA /* String+Additions.swift */,
+				B05E416057BBA4E7A5798A83C298C861 /* UIFont+Additions.swift */,
+			);
+			name = Pod;
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		AFB8986470589DAAEC39BCD6F75E6994 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				544AEB7432FFB6792D5E5259FCE143BF /* Info.plist */,
+				582055E245D0ECAD10176EBF3F45B411 /* Stepperier.modulemap */,
+				DBB096020F7FD2CDF2E92F7733BED97C /* Stepperier.xcconfig */,
+				E5CEC5B5AED37494D05F4C90CA8AF4B4 /* Stepperier-dummy.m */,
+				CADD0D505B114FD81492541A8C003BD3 /* Stepperier-prefix.pch */,
+				4DC1FA6F6511A7DE7AA0A23A96276625 /* Stepperier-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Stepperier";
+			sourceTree = "<group>";
+		};
+		BB41CDF5D38A4CF30BD9248D84633B97 /* Pods-StepperierExample */ = {
+			isa = PBXGroup;
+			children = (
+				15920AC12EB761F7B00CFBDACEDD86A9 /* Info.plist */,
+				FA3CF3E85C3E39535C9C326A93B92227 /* Pods-StepperierExample.modulemap */,
+				3DCE9B6F09379584ECEC416024205425 /* Pods-StepperierExample-acknowledgements.markdown */,
+				79E00DACF8759C88F021108FDB0B339C /* Pods-StepperierExample-acknowledgements.plist */,
+				410D72E4D9E5EDA33E3691A085FBBD9E /* Pods-StepperierExample-dummy.m */,
+				7D2272D274CA33A914F53E4AC117A0C4 /* Pods-StepperierExample-frameworks.sh */,
+				315C28A37BA946BDEC2A75C8491164E4 /* Pods-StepperierExample-resources.sh */,
+				3A914ED2AD3ADDAF6A7E887C8EEEBA82 /* Pods-StepperierExample-umbrella.h */,
+				F9E8F1037947F72EAF17B0179E5C1C70 /* Pods-StepperierExample.debug.xcconfig */,
+				641962E58F4501A03EF1DD27B900BF17 /* Pods-StepperierExample.release.xcconfig */,
+			);
+			name = "Pods-StepperierExample";
+			path = "Target Support Files/Pods-StepperierExample";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5A5CE77DDC52D5405E95C5D5340801D /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF66624213D5CCC35AD436DFED44C1F8 /* Stepperier */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		EF66624213D5CCC35AD436DFED44C1F8 /* Stepperier */ = {
+			isa = PBXGroup;
+			children = (
+				906E5C384088673B193EE993CA508CAC /* Pod */,
+				AFB8986470589DAAEC39BCD6F75E6994 /* Support Files */,
+			);
+			name = Stepperier;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		FE34432A33140104B9B8FBC4404F0B2C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BB41CDF5D38A4CF30BD9248D84633B97 /* Pods-StepperierExample */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		098DC1B8BB6E5A5FA1A92AADB2E1632F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CAE8BDB52D4EF61C0EE840E8A520163 /* Pods-StepperierExample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		910C695356259C401CC84E2E2776AD6D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				459C3398B2701EC957E06FD4D75238FD /* Stepperier-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		74CDAEF97AAC331733BBA059CC8CA0B8 /* Pods-StepperierExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43D60EC882F80F5C0C2D96C2AB166AEE /* Build configuration list for PBXNativeTarget "Pods-StepperierExample" */;
+			buildPhases = (
+				FFB47653447FBC3C4C81DD20C7BC627A /* Sources */,
+				EF8A5E53ABFB0F6D5ECE9540576D80D5 /* Frameworks */,
+				098DC1B8BB6E5A5FA1A92AADB2E1632F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C30304F7B84917D333B2765838514C1C /* PBXTargetDependency */,
+			);
+			name = "Pods-StepperierExample";
+			productName = "Pods-StepperierExample";
+			productReference = F0BB41462C8EB5FFA03C4BB2DD519A47 /* Pods_StepperierExample.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A8B80AACE8B16EBACEF082C9B11452AC /* Stepperier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A51C57DB10F25745A1E666DED1865D44 /* Build configuration list for PBXNativeTarget "Stepperier" */;
+			buildPhases = (
+				29E3238DF1EF77D20E6840C49A39DB27 /* Sources */,
+				5053522398D10CF1D8B27ADF9456C019 /* Frameworks */,
+				910C695356259C401CC84E2E2776AD6D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Stepperier;
+			productName = Stepperier;
+			productReference = 1E62470F44E8812E08FA0DAD3940F133 /* Stepperier.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 45339F8001B570D42018F1D3CA2D9BFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				74CDAEF97AAC331733BBA059CC8CA0B8 /* Pods-StepperierExample */,
+				A8B80AACE8B16EBACEF082C9B11452AC /* Stepperier */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29E3238DF1EF77D20E6840C49A39DB27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58B7578ADF3F1FBED95479893CA1AA6A /* CenteredLineSymbolView.swift in Sources */,
+				5881197655A44919469CD220218D8E58 /* ProportionalCornerRadius.swift in Sources */,
+				E0806AA616E0BB463BE590DA4F40E1C4 /* RoundableView.swift in Sources */,
+				D3F3E8C51F9DA7D4E86C99E8D4FBDB29 /* Stepperier-dummy.m in Sources */,
+				02AD33BD06776B422CA1C506945857BB /* Stepperier.swift in Sources */,
+				A67FDBC9F11BE690AB9041AEEAC27129 /* String+Additions.swift in Sources */,
+				809B9E2E44E4FDFE6DB7C5FDF171C30F /* UIFont+Additions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFB47653447FBC3C4C81DD20C7BC627A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B3FD0E356785A42F4A3FF5A766BE08 /* Pods-StepperierExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C30304F7B84917D333B2765838514C1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Stepperier;
+			target = A8B80AACE8B16EBACEF082C9B11452AC /* Stepperier */;
+			targetProxy = 81443AF7D9D2A9CF51E7CEFF256F8F2A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		54190F96506A6FF96C1F5B73507CDF3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBB096020F7FD2CDF2E92F7733BED97C /* Stepperier.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Stepperier/Stepperier-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Stepperier/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Stepperier/Stepperier.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Stepperier;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9178847FD9F7DBB16519F0F893FA8606 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9E8F1037947F72EAF17B0179E5C1C70 /* Pods-StepperierExample.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-StepperierExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StepperierExample/Pods-StepperierExample.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_StepperierExample;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B913FD3A61564D122305B25A03C9D832 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBB096020F7FD2CDF2E92F7733BED97C /* Stepperier.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Stepperier/Stepperier-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Stepperier/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Stepperier/Stepperier.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Stepperier;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BF9D89756FA05BE96EDA3178A2F3F875 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 641962E58F4501A03EF1DD27B900BF17 /* Pods-StepperierExample.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-StepperierExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StepperierExample/Pods-StepperierExample.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_StepperierExample;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */,
+				B7324857C38B065FEB1EEE3105C2367A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43D60EC882F80F5C0C2D96C2AB166AEE /* Build configuration list for PBXNativeTarget "Pods-StepperierExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9178847FD9F7DBB16519F0F893FA8606 /* Debug */,
+				BF9D89756FA05BE96EDA3178A2F3F875 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A51C57DB10F25745A1E666DED1865D44 /* Build configuration list for PBXNativeTarget "Stepperier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B913FD3A61564D122305B25A03C9D832 /* Debug */,
+				54190F96506A6FF96C1F5B73507CDF3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

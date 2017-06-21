@@ -217,9 +217,9 @@ open class Stepperier: UIControl {
             let threshhold = additionSymbolView.frame.maxX.subtracting(halfCounterContainerViewWidth).subtracting(centerX)
             let movement = counterContainerCenterXLayoutConstraint.constant
             if value > minimumValue && movement <= -threshhold {
-                value -= 1
+                updateValueWithEvents(value - 1)
             } else if value < maximumValue && movement >= threshhold {
-                value += 1
+                updateValueWithEvents(value + 1)
             }
             
             // Reset
@@ -232,6 +232,11 @@ open class Stepperier: UIControl {
                     strongSelf.panGestureInteractionInformation = nil
             })
         }
+    }
+
+    internal func updateValueWithEvents(_ value: Int) {
+        self.value = value
+        sendActions(for: .valueChanged)
     }
 }
 

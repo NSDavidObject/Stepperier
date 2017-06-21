@@ -56,17 +56,29 @@ class MyViewController: UIViewController {
 
         // Add as subview of the view controller's view
         view.addSubview(stepperier)
-        
+
         // Setup layout constraints
         stepperier.translatesAutoresizingMaskIntoConstraints = false
         stepperier.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        stepperier.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        stepperier.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
+
+        // Add value change observing
+        stepperier.addTarget(self, action: #selector(stepperierValueDidChange(_:)), for: .valueChanged)
+    }
+    
+    @IBAction func stepperierValueDidChange(_ stepper: Stepperier) {
+        print("Updated value: \(stepper.value)")
     }
 }
 ```
 
 You may add a UIView inside your xib and set its custom class to `Stepperier` making sure the module is autofilled with the `Stepperier` module.
 
-## Logo License
+## Credits
 
-The app icon is released under [Creative Commons CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en). You are free to adapt and use it for commercial purposes without attributing the original author or source. Although not required, a link back to this project is appreciated.
+- David Elsonbaty ([NSDavidObject](http://elsonbaty.ca))
+- Oleg Frolov ([Dribble](https://dribbble.com/Volorf))
+
+## License
+
+Stepperier is released under the MIT license. See LICENSE for details.
