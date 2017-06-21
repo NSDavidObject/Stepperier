@@ -60,7 +60,7 @@ class MyViewController: UIViewController {
         // Setup layout constraints
         stepperier.translatesAutoresizingMaskIntoConstraints = false
         stepperier.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        stepperier.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
+        stepperier.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
 
         // Add value change observing
         stepperier.addTarget(self, action: #selector(stepperierValueDidChange(_:)), for: .valueChanged)
