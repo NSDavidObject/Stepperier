@@ -1,0 +1,16 @@
+PODS:
+  - Stepperier (1.0.0)
+
+DEPENDENCIES:
+  - Stepperier (from `../`)
+
+EXTERNAL SOURCES:
+  Stepperier:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Stepperier: bfcfbcdb452afb109db5825de7291a02e0f0d8a7
+
+PODFILE CHECKSUM: 93b760d70a2b403d6b2b0b579571a9492f1f2917
+
+COCOAPODS: 1.2.1

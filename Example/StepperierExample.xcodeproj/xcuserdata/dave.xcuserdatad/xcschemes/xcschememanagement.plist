@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Stepperier.xcscheme</key>
+		<key>StepperierExample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5580C93B1EF8D8DB00D05A43</key>
+		<key>559F474F1EFA493000746FF8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

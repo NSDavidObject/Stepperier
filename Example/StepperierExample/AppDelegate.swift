@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Stepperier
+//  StepperierExample
 //
-//  Created by David Elsonbaty on 6/19/17.
+//  Created by David Elsonbaty on 6/20/17.
 //  Copyright © 2017 David Elsonbaty. All rights reserved.
 //
 
