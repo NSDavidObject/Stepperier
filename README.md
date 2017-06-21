@@ -36,13 +36,11 @@ Then, run the following command:
 ```bash
 $ pod install
 ```
-
 ### Manually
 
-If you prefer not to use either of the aforementioned dependency managers, you can integrate Stepperier into your project manually.
+If you prefer not to use either of the cocoapods, you can integrate Stepperier into your project manually by [downloading](https://github.com/NSDavidObject/Stepperier/archive/master.zip) the source files and integrating the [Pod](https://github.com/NSDavidObject/Stepperier/tree/master/Pod) directory in your project.
 
 ---
-
 
 ## Usage
 
@@ -78,9 +76,19 @@ class MyViewController: UIViewController {
 
 You may add a UIView inside your xib and set its custom class to `Stepperier` making sure the module is autofilled with the `Stepperier` module.
 
+## Contribution
+
+Contributions are welcomed and encouraged *♡*.
+
+# Contact
+
+David Elsonbaty
+ - [@NSDavidObject](https://twitter.com/nsdavidobject)
+ - [Website](http://elsonbaty.ca)
+ - [Email](mailto:dave@elsonbaty.ca)
+
 ## Credits
 
-- David Elsonbaty ([NSDavidObject](http://elsonbaty.ca))
 - Oleg Frolov ([Dribble](https://dribbble.com/Volorf))
 
 ## License
