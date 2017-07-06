@@ -89,7 +89,7 @@ David Elsonbaty
 
 ## Credits
 
-- Oleg Frolov ([Dribble](https://dribbble.com/Volorf))
+- Oleg Frolov ([Github](https://github.com/Volorf), [Dribble](https://dribbble.com/Volorf))
 
 ## License
 
