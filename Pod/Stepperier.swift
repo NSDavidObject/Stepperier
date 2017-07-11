@@ -262,12 +262,12 @@ extension Stepperier {
     
     internal func didTapAdditionSymbol() {
         guard isOperationSymbolsManualClicksEnabled && value < maximumValue else { return }
-        value += 1
+        updateValueWithEvents(value + 1)
     }
     
     internal func didTapSubtractionSymbol() {
         guard isOperationSymbolsManualClicksEnabled && value > minimumValue else { return }
-        value -= 1
+        updateValueWithEvents(value - 1)
     }
     
     internal func didUpdateValue(_ value: Int) {
