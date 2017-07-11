@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class CenteredLineSymbolView: UIView {
+internal class CenteredLineSymbolControl: UIControl {
     
     enum LineDirection {
         case vertical

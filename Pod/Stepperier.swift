@@ -41,6 +41,10 @@ open class Stepperier: UIControl {
         didSet { didUpdateValueBackgroundColor(valueBackgroundColor) }
     }
     
+    public var operationSymbolsColor: UIColor = .white {
+        didSet { didUpdateOperationSymbolsColor(operationSymbolsColor) }
+    }
+    
     public var font: UIFont = Constants.defaultFont {
         didSet { monoSpacedFont = font.monospacedDigitFont }
     }
@@ -61,6 +65,7 @@ open class Stepperier: UIControl {
         didSet { invalidateIntrinsicContentSize() }
     }
     
+    public var isOperationSymbolsManualClicksEnabled: Bool = true
     public var shouldDisableScrollingPastBoundaries: Bool = true
     public var shouldHideSymbolsUponReachingBounds: Bool = true {
         didSet { didUpdateHidingSymbolsPreference(shouldHideSymbolsUponReachingBounds) }
@@ -72,8 +77,8 @@ open class Stepperier: UIControl {
     internal var counterContainerCenterXLayoutConstraint: NSLayoutConstraint?
     internal var proportionalCornerRadius: ProportionalCornerRadius = .circular
     internal lazy var valueLabel: UILabel = UILabel()
-    internal lazy var additionSymbolView: CenteredLineSymbolView = CenteredLineSymbolView(lineDirection: .allTheAbove)
-    internal lazy var subtractionSymbolView: CenteredLineSymbolView = CenteredLineSymbolView(lineDirection: .horizontal)
+    internal lazy var additionSymbolControl: CenteredLineSymbolControl = CenteredLineSymbolControl(lineDirection: .allTheAbove)
+    internal lazy var subtractionSymbolControl: CenteredLineSymbolControl = CenteredLineSymbolControl(lineDirection: .horizontal)
     internal lazy var countContainerView: RoundableView = RoundableView(proportionalCornerRadius: .circular)
     internal lazy var leftOrganizationStackView: UIStackView = UIStackView()
     internal lazy var middleOrganizationStackView: UIStackView = UIStackView()
@@ -118,15 +123,17 @@ open class Stepperier: UIControl {
         organizationStackView.distribution = .fillProportionally
         addSubview(organizationStackView)
         
-        subtractionSymbolView.isOpaque = false
-        subtractionSymbolView.lineWidth = symbolsLineWidth
-        subtractionSymbolView.color = valueBackgroundColor
-        addSubview(subtractionSymbolView)
+        subtractionSymbolControl.isOpaque = false
+        subtractionSymbolControl.lineWidth = symbolsLineWidth
+        subtractionSymbolControl.color = valueBackgroundColor
+        subtractionSymbolControl.addTarget(self, action: #selector(didTapSubtractionSymbol), for: .touchUpInside)
+        addSubview(subtractionSymbolControl)
         
-        additionSymbolView.isOpaque = false
-        additionSymbolView.lineWidth = symbolsLineWidth
-        additionSymbolView.color = valueBackgroundColor
-        addSubview(additionSymbolView)
+        additionSymbolControl.isOpaque = false
+        additionSymbolControl.lineWidth = symbolsLineWidth
+        additionSymbolControl.color = valueBackgroundColor
+        additionSymbolControl.addTarget(self, action: #selector(didTapAdditionSymbol), for: .touchUpInside)
+        addSubview(additionSymbolControl)
         
         countContainerView.backgroundColor = valueBackgroundColor
         addSubview(countContainerView)
@@ -170,17 +177,17 @@ open class Stepperier: UIControl {
         middleOrganizationStackView.widthAnchor.constraint(equalTo: countContainerView.widthAnchor, multiplier: 1.0).isActive = true
         middleOrganizationStackView.heightAnchor.constraint(equalTo: countContainerView.heightAnchor, multiplier: 1.0).isActive = true
         
-        subtractionSymbolView.translatesAutoresizingMaskIntoConstraints = false
-        subtractionSymbolView.centerXAnchor.constraint(equalTo: leftOrganizationStackView.centerXAnchor).isActive = true
-        subtractionSymbolView.centerYAnchor.constraint(equalTo: leftOrganizationStackView.centerYAnchor).isActive = true
-        subtractionSymbolView.widthAnchor.constraint(equalTo: heightAnchor, multiplier: Constants.symbolSizeToStepperierHeightRatio).isActive = true
-        subtractionSymbolView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: Constants.symbolSizeToStepperierHeightRatio).isActive = true
+        subtractionSymbolControl.translatesAutoresizingMaskIntoConstraints = false
+        subtractionSymbolControl.centerXAnchor.constraint(equalTo: leftOrganizationStackView.centerXAnchor).isActive = true
+        subtractionSymbolControl.centerYAnchor.constraint(equalTo: leftOrganizationStackView.centerYAnchor).isActive = true
+        subtractionSymbolControl.widthAnchor.constraint(equalTo: heightAnchor, multiplier: Constants.symbolSizeToStepperierHeightRatio).isActive = true
+        subtractionSymbolControl.heightAnchor.constraint(equalTo: heightAnchor, multiplier: Constants.symbolSizeToStepperierHeightRatio).isActive = true
         
-        additionSymbolView.translatesAutoresizingMaskIntoConstraints = false
-        additionSymbolView.centerXAnchor.constraint(equalTo: rightOrganizationStackView.centerXAnchor).isActive = true
-        additionSymbolView.centerYAnchor.constraint(equalTo: rightOrganizationStackView.centerYAnchor).isActive = true
-        additionSymbolView.widthAnchor.constraint(equalTo: heightAnchor, multiplier: Constants.symbolSizeToStepperierHeightRatio).isActive = true
-        additionSymbolView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: Constants.symbolSizeToStepperierHeightRatio).isActive = true
+        additionSymbolControl.translatesAutoresizingMaskIntoConstraints = false
+        additionSymbolControl.centerXAnchor.constraint(equalTo: rightOrganizationStackView.centerXAnchor).isActive = true
+        additionSymbolControl.centerYAnchor.constraint(equalTo: rightOrganizationStackView.centerYAnchor).isActive = true
+        additionSymbolControl.widthAnchor.constraint(equalTo: heightAnchor, multiplier: Constants.symbolSizeToStepperierHeightRatio).isActive = true
+        additionSymbolControl.heightAnchor.constraint(equalTo: heightAnchor, multiplier: Constants.symbolSizeToStepperierHeightRatio).isActive = true
         
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         valueLabel.centerXAnchor.constraint(equalTo: countContainerView.centerXAnchor).isActive = true
@@ -190,8 +197,8 @@ open class Stepperier: UIControl {
     
     internal func updateSymbolsAppearanceState() {
         let alpha: ((Bool) -> CGFloat) = { $0 ? 1.0 : 0.2 }
-        additionSymbolView.alpha = alpha(!(shouldHideSymbolsUponReachingBounds && value >= maximumValue))
-        subtractionSymbolView.alpha = alpha(!(shouldHideSymbolsUponReachingBounds && value <= minimumValue))
+        additionSymbolControl.alpha = alpha(!(shouldHideSymbolsUponReachingBounds && value >= maximumValue))
+        subtractionSymbolControl.alpha = alpha(!(shouldHideSymbolsUponReachingBounds && value <= minimumValue))
     }
     
     internal func panGestureDidRecieveInteraction(_ panGesture: UIPanGestureRecognizer) {
@@ -206,7 +213,7 @@ open class Stepperier: UIControl {
             let offsetFromStart = gestureLocation.x.subtracting(panGestureInteractionInformation.startPosition.x)
             let halfCounterContainerViewWidth = countContainerView.bounds.width.divided(by: 2.0)
             let centerX = bounds.width.divided(by: 2.0)
-            let maxCenterOffset = additionSymbolView.frame.minX.adding(halfCounterContainerViewWidth).subtracting(centerX)
+            let maxCenterOffset = additionSymbolControl.frame.minX.adding(halfCounterContainerViewWidth).subtracting(centerX)
             let maxCenterOffsetForAddition = (value < maximumValue || !shouldDisableScrollingPastBoundaries) ? maxCenterOffset : 0
             let minCenterOffsetForSubtraction = (value > minimumValue || !shouldDisableScrollingPastBoundaries) ? -maxCenterOffset : 0
             counterContainerCenterXLayoutConstraint.constant = min(max(offsetFromStart, minCenterOffsetForSubtraction), maxCenterOffsetForAddition)
@@ -214,7 +221,7 @@ open class Stepperier: UIControl {
             
             let centerX = bounds.width.divided(by: 2.0)
             let halfCounterContainerViewWidth = countContainerView.bounds.width.divided(by: 2.0)
-            let threshhold = additionSymbolView.frame.maxX.subtracting(halfCounterContainerViewWidth).subtracting(centerX)
+            let threshhold = additionSymbolControl.frame.maxX.subtracting(halfCounterContainerViewWidth).subtracting(centerX)
             let movement = counterContainerCenterXLayoutConstraint.constant
             if value > minimumValue && movement <= -threshhold {
                 updateValueWithEvents(value - 1)
@@ -253,6 +260,16 @@ internal struct StepperiedDefaultAnimationHandler: StepperierAnimationHandler {
 
 extension Stepperier {
     
+    internal func didTapAdditionSymbol() {
+        guard isOperationSymbolsManualClicksEnabled && value < maximumValue else { return }
+        value += 1
+    }
+    
+    internal func didTapSubtractionSymbol() {
+        guard isOperationSymbolsManualClicksEnabled && value > minimumValue else { return }
+        value -= 1
+    }
+    
     internal func didUpdateValue(_ value: Int) {
         valueLabel.text = value.description
         updateSymbolsAppearanceState()
@@ -268,14 +285,17 @@ extension Stepperier {
     }
     
     internal func didUpdateValueBackgroundColor(_ color: UIColor) {
-        additionSymbolView.color = color
-        subtractionSymbolView.color = color
         countContainerView.backgroundColor = color
     }
     
+    internal func didUpdateOperationSymbolsColor(_ color: UIColor) {
+        additionSymbolControl.color = color
+        subtractionSymbolControl.color = color
+    }
+    
     internal func didUpdateLineWidth(_ lineWidth: CGFloat) {
-        additionSymbolView.lineWidth = lineWidth
-        subtractionSymbolView.lineWidth = lineWidth
+        additionSymbolControl.lineWidth = lineWidth
+        subtractionSymbolControl.lineWidth = lineWidth
     }
     
     internal func didUpdateHidingSymbolsPreference(_ shouldHide: Bool) {

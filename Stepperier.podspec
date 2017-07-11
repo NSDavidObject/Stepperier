@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name = 'Stepperier'
-  s.version = '1.0.2'
+  s.version = '1.1.0'
   s.license = 'MIT'
-  s.summary = 'An interactive draggable stepper'
+  s.summary = 'Snapping stepper'
   s.homepage = 'https://github.com/NSDavidObject/Stepperier'
   s.social_media_url = 'https://twitter.com/NSDavidObject'
   s.authors = { 'David Elsonbaty' => 'dave@elsonbaty.ca' }
