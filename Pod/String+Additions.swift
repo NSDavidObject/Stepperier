@@ -13,7 +13,7 @@ extension String {
     func size(forFont font: UIFont, boundedInWidth width: CGFloat = .infinity, maxNumberOfLines: Int = .max) -> CGSize {
         let maxHeight = CGFloat(maxNumberOfLines) * font.lineHeight
         let constraintRect = CGSize(width:  .greatestFiniteMagnitude, height: maxHeight)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
         return boundingBox.size
     }
 }

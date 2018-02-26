@@ -20,10 +20,10 @@ private extension UIFontDescriptor {
     var monospacedDigitFontDescriptor: UIFontDescriptor {
         let fontDescriptorFeatureSettings = [
             [
-                UIFontFeatureTypeIdentifierKey: kNumberSpacingType,
-                UIFontFeatureSelectorIdentifierKey: kMonospacedNumbersSelector]
+                UIFontDescriptor.FeatureKey.featureIdentifier: kNumberSpacingType,
+                UIFontDescriptor.FeatureKey.typeIdentifier: kMonospacedNumbersSelector]
         ]
-        let fontDescriptorAttributes = [UIFontDescriptorFeatureSettingsAttribute: fontDescriptorFeatureSettings]
+        let fontDescriptorAttributes = [UIFontDescriptor.AttributeName.featureSettings: fontDescriptorFeatureSettings]
         let fontDescriptor = addingAttributes(fontDescriptorAttributes)
         return fontDescriptor
     }

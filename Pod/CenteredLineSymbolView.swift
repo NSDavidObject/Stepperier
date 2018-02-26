@@ -59,13 +59,13 @@ internal class CenteredLineSymbolControl: UIControl {
         context.setStrokeColor(color.cgColor)
         
         if lineDirection.includesVertical {
-            context.move(to: CGPoint(x: bounds.width.divided(by: 2.0), y: 0.0))
-            context.addLine(to: CGPoint(x: bounds.width.divided(by: 2.0), y: bounds.height))
+            context.move(to: CGPoint(x: bounds.width / 2.0, y: 0.0))
+            context.addLine(to: CGPoint(x: bounds.width / 2.0, y: bounds.height))
         }
         
         if lineDirection.includesHorizontal {
-            context.move(to: CGPoint(x: 0.0, y: bounds.height.divided(by: 2.0)))
-            context.addLine(to: CGPoint(x: bounds.width, y: bounds.height.divided(by: 2.0)))
+            context.move(to: CGPoint(x: 0.0, y: bounds.height / 2.0))
+            context.addLine(to: CGPoint(x: bounds.width, y: bounds.height / 2.0))
         }
         
         context.strokePath()
