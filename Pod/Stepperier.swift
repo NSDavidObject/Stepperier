@@ -12,7 +12,7 @@ fileprivate struct Constants {
     static let defaultBackgroundColor: UIColor = UIColor.white.withAlphaComponent(0.2)
     static let defaultTintColor: UIColor = UIColor(red:109.0/255.0, green:114.0/255.0, blue:254.0/255.0, alpha:255.0/255.0)
     static let symbolSizeToStepperierHeightRatio: CGFloat = 0.25
-    static let defaultFont: UIFont = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightLight)
+    static let defaultFont: UIFont = UIFont.systemFont(ofSize: 17.0, weight: UIFont.Weight.light)
 }
 
 public protocol StepperierAnimationHandler {
@@ -87,9 +87,9 @@ open class Stepperier: UIControl {
     
     open override var intrinsicContentSize: CGSize {
         let textSize: CGSize = value.description.size(forFont: monoSpacedFont, maxNumberOfLines: 1)
-        let height: CGFloat = valueLabelMargin.multiplied(by: 2).advanced(by: textSize.height)
+        let height: CGFloat = (valueLabelMargin * 2) + textSize.height
         let symbolWidth: CGFloat = Constants.symbolSizeToStepperierHeightRatio * height
-        let width: CGFloat = height.multiplied(by: 2) + (valueLabelMargin.multiplied(by: 2) + symbolWidth)
+        let width: CGFloat = (height * 2) + (valueLabelMargin * 2) + symbolWidth
         return CGSize(width: width, height: height)
     }
     
@@ -155,7 +155,7 @@ open class Stepperier: UIControl {
         countContainerView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         
         let widthConstraint = countContainerView.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 1.0)
-        widthConstraint.priority = 750
+        widthConstraint.priority = UILayoutPriority(rawValue: 750)
         widthConstraint.isActive = true
         
         countContainerView.rightAnchor.constraint(greaterThanOrEqualTo: valueLabel.rightAnchor, constant: valueLabelMargin).isActive = true
@@ -192,7 +192,7 @@ open class Stepperier: UIControl {
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         valueLabel.centerXAnchor.constraint(equalTo: countContainerView.centerXAnchor).isActive = true
         valueLabel.centerYAnchor.constraint(equalTo: countContainerView.centerYAnchor).isActive = true
-        valueLabel.setContentCompressionResistancePriority(.infinity, for: .horizontal)
+        valueLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
     }
     
     internal func updateSymbolsAppearanceState() {
@@ -201,7 +201,7 @@ open class Stepperier: UIControl {
         subtractionSymbolControl.alpha = alpha(!(shouldHideSymbolsUponReachingBounds && value <= minimumValue))
     }
     
-    internal func panGestureDidRecieveInteraction(_ panGesture: UIPanGestureRecognizer) {
+    @objc internal func panGestureDidRecieveInteraction(_ panGesture: UIPanGestureRecognizer) {
         guard let counterContainerCenterXLayoutConstraint = counterContainerCenterXLayoutConstraint else { return }
         
         let gestureLocation = panGesture.location(in: self)
@@ -210,18 +210,18 @@ open class Stepperier: UIControl {
         } else if panGesture.state == .changed {
             guard let panGestureInteractionInformation = panGestureInteractionInformation else { return }
             
-            let offsetFromStart = gestureLocation.x.subtracting(panGestureInteractionInformation.startPosition.x)
-            let halfCounterContainerViewWidth = countContainerView.bounds.width.divided(by: 2.0)
-            let centerX = bounds.width.divided(by: 2.0)
-            let maxCenterOffset = additionSymbolControl.frame.minX.adding(halfCounterContainerViewWidth).subtracting(centerX)
+            let offsetFromStart = gestureLocation.x - panGestureInteractionInformation.startPosition.x
+            let halfCounterContainerViewWidth = countContainerView.bounds.width / 2.0
+            let centerX = bounds.width / 2.0
+            let maxCenterOffset = additionSymbolControl.frame.minX + halfCounterContainerViewWidth - centerX
             let maxCenterOffsetForAddition = (value < maximumValue || !shouldDisableScrollingPastBoundaries) ? maxCenterOffset : 0
             let minCenterOffsetForSubtraction = (value > minimumValue || !shouldDisableScrollingPastBoundaries) ? -maxCenterOffset : 0
             counterContainerCenterXLayoutConstraint.constant = min(max(offsetFromStart, minCenterOffsetForSubtraction), maxCenterOffsetForAddition)
         } else if panGesture.state == .ended {
             
-            let centerX = bounds.width.divided(by: 2.0)
-            let halfCounterContainerViewWidth = countContainerView.bounds.width.divided(by: 2.0)
-            let threshhold = additionSymbolControl.frame.maxX.subtracting(halfCounterContainerViewWidth).subtracting(centerX)
+            let centerX = bounds.width / 2.0
+            let halfCounterContainerViewWidth = countContainerView.bounds.width / 2.0
+            let threshhold = additionSymbolControl.frame.maxX - halfCounterContainerViewWidth - centerX
             let movement = counterContainerCenterXLayoutConstraint.constant
             if value > minimumValue && movement <= -threshhold {
                 updateValueWithEvents(value - 1)
@@ -249,7 +249,7 @@ open class Stepperier: UIControl {
 
 internal struct StepperiedDefaultAnimationHandler: StepperierAnimationHandler {
     
-    func animate(animations: @escaping ((Void) -> Void), completion: @escaping ((Void) -> Void)) {
+    func animate(animations: @escaping (() -> Void), completion: @escaping (() -> Void)) {
         UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 2, options: .curveEaseInOut, animations: animations, completion: { _ in
             completion()
         })
@@ -260,12 +260,12 @@ internal struct StepperiedDefaultAnimationHandler: StepperierAnimationHandler {
 
 extension Stepperier {
     
-    internal func didTapAdditionSymbol() {
+    @objc internal func didTapAdditionSymbol() {
         guard isOperationSymbolsManualClicksEnabled && value < maximumValue else { return }
         updateValueWithEvents(value + 1)
     }
     
-    internal func didTapSubtractionSymbol() {
+    @objc internal func didTapSubtractionSymbol() {
         guard isOperationSymbolsManualClicksEnabled && value > minimumValue else { return }
         updateValueWithEvents(value - 1)
     }
